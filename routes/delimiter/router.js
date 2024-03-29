@@ -17,11 +17,12 @@ const homeRed       = require('../../controllers/delimiter/home');
 const homeRender    = require('../../controllers/delimiter/home');
 const fetchAll      = require('../../middlewares/delimiter/query');
 const searchQuery   = require('../../middlewares/delimiter/searchQuery');
+const { authorization } = require('../../middlewares/login/authorization');
 
 
-del_router.get('/delimiter', fetchAll, homeRender);
+del_router.get('/delimiter', authorization, fetchAll, homeRender);
 
-del_router.post('/delPost', searchQuery, homeRender);
+del_router.post('/delPost', authorization, searchQuery, homeRender);
 
 
 module.exports = del_router;
