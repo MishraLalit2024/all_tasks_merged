@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="text\en">
+
+<head>
+    <title>All JavaScript Events</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <style>
+        table{
+            background-color: #fff;
+            width: 80%;
+        }
+        td{
+            height: 150px;
+        }
+    </style>
+    <!--NAME: LALIT MISHRA; DATE: 31-JAN-2024-->
+</head>
+
+<body onresize="onResizeFun()" bgcolor="#efc">
+    <div id="headerName">
+        <!--To display developer Information on HTML WebPage.-->
+    </div>
+
+    <div align="center">
+        <p>All JavaScript Events</p>
+    </div>
+    <br>
+
+    <div align="center">
+        <table border="1">
+        <tr>
+            <td bgcolor="f7d64e">
+                onChange
+                <select id="city" name="onChange" onchange="onChangeFun()">
+                    <option value="surat">S- Surat</option>
+                    <option value="ahmedabad">S- Ahmedabad</option>
+                    <option value="vadodara">S- Vadodara</option>
+                    <option value="mahesana">S- Mahesana</option>
+                    <option value="patan">S- Patan</option>
+                </select>
+                <p id="demoOnChange"></p>
+            </td>
+            <td>
+                onClick
+                <p id="onClickDemo" onclick="onClickFun()">Click Me</p>
+            </td>
+            <td bgcolor="f7d64e">
+                onMouseOver &amp; onMouseOut
+                <p id="onMouseOver" onmouseover="onMouseOverFun()" onmouseout="onMouseOutFun()">Move your cursor over the text.</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                onKeyUp
+                <input id="onKeyUp" placeholder="Enter any value" name="onKeyUp" onkeyup="onKeyUpFun()">
+                
+            </td>
+            <td bgcolor="f7d64e">
+                onKeyDown
+                <input id="onKeyDown" placeholder="Enter any value" name="onKeyDown" onkeyup="onKeyDownFun()">
+
+            </td>
+            <td>
+                onKeyPress
+                <input id="onKeyPress" placeholder="Enter any value" name="onKeyPress" onkeyup="onKeyPressFun()">
+            </td>
+        </tr>
+
+        <tr>
+            <td bgcolor="f7d64e">
+                onLoad
+                <img src="1.jpeg" onload="onLoadFun()">
+                <p id="onLoadDemo"></p>
+            </td>
+            <td>
+                onUnLoad
+                <!--This Event is now been depricated however we can use it in some older version of Browsers.-->
+            </td>
+            <td bgcolor="f7d64e">
+                oninput
+                <input type="text" id="onInputVar" oninput="onInputFun()">
+                <p id="onInputDemo"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                onMouseDown
+                <p id="onMouseDownDemo" onmousedown="onMouseDownFun()">Click on the text.</p>
+            </td>
+            <td bgcolor="f7d64e">
+                onMouseUp
+                <p id="onMouseUpDemo" onmouseup="onMouseUpFun()">Click on the text.</p>
+            </td>
+            <td>
+                onFocus
+                <input type="text" id="onFocusVar" onfocus="onFocusFun()">
+                <p id="onFocusDemo"></p>
+            </td>
+        </tr>
+
+        <tr>
+            <td bgcolor="f7d64e">
+                onMouseMove
+                <p id="onMouseMoveDemo" onmousemove="onMouseMoveFun()">Text is here ready.</p>
+            </td>
+            <td>
+                onBlur
+                <input name="onBlur" type="text" onblur="onBlurFun()">
+                <p id="onBlurDemo"></p>
+            </td>
+            <td bgcolor="f7d64e">
+                onResize
+                <p id="onResizeDemo"></p>
+                <!--The Resize Event is triggered twice because once for the change in window's size and then for change in document size.-->
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                onDbClick
+                <p ondblclick="onDbClickFun()">Double Click me</p>
+                <p id="onDbClickDemo"></p>
+            </td>
+            <td bgcolor="f7d64e">
+                onOffline/onOnline 
+                <p id="onOnlineDemo">on Online</p>
+            </td>
+            <td>
+                onAbort
+            </td>
+        </tr>
+
+        </table>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <script src="all_Js_events.js"></script>
+</body>
+
+</html>

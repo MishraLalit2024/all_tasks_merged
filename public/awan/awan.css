@@ -1,0 +1,395 @@
+:root{
+    --bgcolor: #0A2259;
+    --blue: #6A88B6;
+    --lBlue: #F0F6FF;
+    --orange: #F2A33A;
+    --gray: #AAAAAA;
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    color: #0A2259;
+}
+section, header, footer{
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--lBlue);
+    overflow: hidden;
+}
+ul{
+    list-style: none;
+    display: flex;
+}
+
+.spaced{
+    justify-content: space-between;
+}
+.containerBox{
+    width: 1200px;
+    margin: 0 auto;
+}
+.flexer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.paddingBig{
+    padding: 72px 0;
+}
+.col2layout{
+    width: calc(100%/2);
+    margin: auto 0;
+}
+.col3layout{
+    width: calc(100%/3);
+}
+.col4layout{
+    width: calc(100%/4);
+}
+.white{
+    background-color: #ffffff;
+}
+.dark{
+    background-color: #6daec23f;
+    padding-bottom: 100px;
+}
+
+
+
+
+
+.logo{
+    margin: auto 0;
+}
+.navlinks{
+    line-height: 80px;
+}
+.navlinks li{
+    padding: 0 16px;
+    margin: 0 12px;
+    letter-spacing: 0.3px;
+}
+.navlinks input{
+    padding: 8px 20px;
+    margin-left: -12px;
+    font-size: 16px;
+    font-weight: 300;
+}
+#login{
+    border: 1px solid #0A2259;
+    background: none;
+    letter-spacing: 0.3px;
+}
+.borderBtm{
+    background-color: #638bf7b2;
+    height: 1px;
+}
+.heading1{
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 80px;
+}
+.caption1{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+}
+.btnLinks1 input{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    margin-top: 36px;
+}
+#getStarted, #freeTrail{
+    padding: 16px 32px;
+    color: #fff;
+    background-color: var(--orange);
+    border: none;
+}
+#getMignHelp, #seeAllPlans{
+    padding: 15px 31px;
+    margin-left: 16px;
+    background: none;
+    border: 1px solid var(--bgcolor);
+    color: #0A2259;
+}
+.arrowDown{
+    margin: 56px 0;
+}
+.imgContainer{
+    position: relative;
+}
+.confidentMan{
+    position: absolute;
+    right: 0;
+    top: -230px;
+}
+.sideText{
+    width: 158px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+.client{
+    height: 200px;
+    margin: 0 auto;
+}
+.client div{
+    margin: auto 0;
+}
+.blurred{
+    background-color: #f0f6ff7a;
+}
+.heading2{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 64px;
+}
+.title{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #6784b1;
+}
+.caption2{
+    color: #000000;
+    opacity: 0.4;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+.imageLeft{
+    margin-left: -33px;
+}
+
+.heading3{
+    margin: 0 auto;
+    text-align: center;
+    width: 818px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 64px;
+}
+.priceCard{
+    margin: 0 -15px;
+}
+.card{
+    margin: 15px;
+    padding: 15px;
+    background-color: #fff;
+    position: relative;
+}
+.textBox{
+    background-color: #F0F6FF;
+    padding: 16px;
+    height: 200px;
+}
+.titleIcon img{
+    margin: auto 0;
+    background-color: #fff;
+}
+.titleIcon p{
+    padding-left: 12px;
+    margin: auto 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #6886B4;
+}
+.textsmall{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #0A2259;
+    opacity: 0.4;
+}
+.price{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #0A2259;
+}
+.moreDetails{
+    padding: 0 31px;
+    border: 1px solid #0A2259;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    background: none;
+}
+
+.card:hover{
+    background-color: #0A2259;
+
+    .moreDetails{
+        background-color: var(--orange);
+        color: #fff;
+    }
+    .textBox{
+        background-color: #6784b1;
+    }
+    .textBox p{
+        color: #fff;
+    }
+    .textsmall{
+        color: #fff;
+        opacity: 0.8;
+    }
+    .price{
+        color: white;
+    }
+}
+
+.technologies{
+    width: 387px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    margin: auto 0;
+}
+.technologies div:hover{
+    opacity: 0.6;
+    background-color: var(--lBlue);
+}
+.technologies div{
+    padding: 16px;
+    width: 350px;
+    height: 108px;
+}
+.technologies p{
+    margin: auto 0;
+}
+.technologies img{
+    padding: 16px;
+    margin: auto 0;
+}
+.tabContent{
+    width: 720px;
+    margin: auto 0;
+    height: 432px;
+    background-color: #ffffff;
+}
+.heading4{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #0A2259;
+}
+.caption4{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+.options div{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+.techLinks{
+    margin: 36px 0;
+    padding: 0 31px;
+    border: 1px solid var(--orange);
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 19px;
+    background: var(--orange);
+    width: 200px;
+    color: #fff;
+}
+.slider{
+    margin: 0 -16px;
+}
+.container{
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.card2{
+    min-width: 20%;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 32px;
+    border: 16px solid #6785b159;
+    margin: 16px;
+}
+.caption5{
+    white-space: wrap;
+}
+.heading5{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 64px;  
+}
+.arrows{
+    margin: auto 0;
+}
+#left{
+    transform: rotate(-180deg);
+    margin-right: 30px;
+}
+
+.heading6{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 64px;
+}
+.caption6{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+
+
+
+footer{
+    background-color: #0A2259;
+    color: #ffffff;
+}
+.caption6{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+.card3{
+    width: 333px;
+    margin: 80px 0;
+}
+.media{
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+}
+.fheading{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+}
+.foption{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}

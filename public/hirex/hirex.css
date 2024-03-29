@@ -1,0 +1,630 @@
+:root{
+    --orange : #FC7F3A;
+    --tomato: #FC6868;
+    --yellow : #FFBB38;
+    --yellow2 : #FFC80A;
+    --green : #389B48;
+    --green2: #64E379;
+    --black : #000000;
+    --white : #FFFFFF;
+    --bgcol : #F9F7EE;
+    --card : #EBE9DE;
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--bgcol);
+}
+
+
+/*
+*   Style that can be used as required frequently.
+*/
+.container{
+    margin: 0 auto;
+    width: 1200px;
+}
+.flexer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.spaced{
+    justify-content: space-between;
+}
+.yellow{
+    background-color: var(--yellow2);
+}
+.vertical-center{
+    margin: auto 0;
+}
+
+
+/*
+*   Column Layouts
+*/
+.col2{
+    width: calc(100%/2);
+}
+.col3{
+    width: calc(100%/3);
+}
+.col4{
+    width: calc(100%/4);
+}
+
+
+/*
+*   Style for the Sliding text;
+*/
+.marquee {
+    background-color: #000000;
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    height: 100px;
+    overflow-x: hidden;
+}
+.track {
+    position: absolute;
+    top: -20px;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+
+.card1{
+    color: white;
+    display: flex;
+}
+.card1 p{
+    min-width: 13%;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 100px;
+    overflow-x: hidden;
+}
+.card1 img{
+    margin: auto 0;
+    padding-right: 100px;
+}
+#for-btn-position{
+    position: relative;
+}
+.btn-container{
+    position: absolute;
+    bottom: 6px;
+    right: 134px;
+    width: 150px;
+    background-color: #ffbb00;
+    border-radius: 6px;
+    box-shadow: 4px 6px;
+    border: 1px solid #000000;
+}
+.btn-content{
+    line-height: 64px;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+
+
+/*
+Style for Header
+*/
+.logo{
+    margin: auto 0;
+}
+.nav-links p{
+    margin-top: 36px;
+    padding: 8px 16px;
+}
+.hiring{
+    background-color: #000000;
+    color: #fff;
+    margin-left: 30px;
+    border-radius: 8px;
+}
+
+/*
+*   Style for the Welcome Page
+*/
+.first-line{
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+}
+.first-line img{
+    scale: 1;
+    height: fit-content;
+    margin: auto 0;
+}
+.title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 62px;
+    line-height: 90px;
+    margin-bottom: 36px;
+}
+.right-panel{
+    padding-top: 100px;
+}
+.right-panel .caption{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+}
+.right-panel input{
+    padding: 16px;
+    box-shadow: 5px 5px black;
+}
+.right-panel input::placeholder{
+    font-size: 18px;
+    opacity: 0.4;
+}
+.right-panel input[type="text"]{
+    background: white;
+    border: 3px solid black;
+    margin-right: 0;
+    width: 300px;
+}
+.right-panel input[type="button"]{
+    background-color: #FFBB38;
+    border: 3px solid #000;
+    margin-left: 0;
+    width: 150px;
+}
+.talk-bubble{
+    margin-top: 56px;
+    background-color: #ffca0a7c;
+    width: fit-content;
+    border-radius: 13px;
+    position: relative;
+}
+.talk-bubble::before{
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    height: 0;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #ffca0a7c;
+}
+.talk-bubble p{
+    padding: 16px;
+}
+.left-panel{
+    margin-top: 100px;
+    position: relative;
+    margin-right: -50px;
+}
+.circle{
+    width: 253px;
+    height: 253px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FC7F3A;
+}
+.circle-content{
+    position: relative;
+}
+.circle p{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 46px;
+    position: absolute;
+    top: 28%;
+    left: 45px;
+}
+.circle-content img{
+    position: absolute;
+    top: 30px;
+    right: 25%;
+}
+.circle-square{
+    width: 258px;
+    height: 258px;
+    background-color: #FFBB38;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 50%;
+    position: absolute;
+    top: 170px;
+    right: 150px;
+    z-index: -1;
+}
+.circle-square .content{
+    position: relative;
+}
+.circle-square p{
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 46px;
+}
+.square{
+    width: 226px;
+    height: 232px;
+    background-color: #389B48;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+}
+.square .content{
+    position: relative;
+}
+.square .content img{
+    position: absolute;
+    top: 130px;
+    right: 40px;
+}
+.square p{
+    position: absolute;
+    bottom: 75px;
+    left: 20px;
+    font-family: 'Ribeye';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 46px;
+}
+.new{
+    position: absolute;
+    bottom: 10%;
+    left: 60%;
+}
+
+/*
+*   Style for profile section with green background
+*/
+.card2{
+    width: 40%;
+    margin: 56px 0;
+    position: relative;
+    text-decoration: none;
+    border: none;
+}
+.left-btn{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+.on-image-btn{
+    padding: 8px;
+    width: 190px;
+    border-radius: 95px;
+    background-color: #ffbb00;
+    border: 3px solid black;
+    position: absolute;
+    bottom: -36px;
+    left: 125px;
+}
+.on-image-btn-text{
+    color: black;
+    font-size: 15px;
+}
+.on-image-btn-text p{
+    margin-right: 16px;
+}
+.on-image-btn-inner{
+    padding: 4px 16px;
+    box-shadow: 4px 4px black;
+    background-color: #389B48;
+    border-radius: 50%;
+    margin: auto 0;
+}
+.on-image-btn-inner img{
+    scale: 2;
+}
+#testimonial{
+    height: 453px;
+    width: 377px;
+    border: 3px solid black;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    margin-left: 36px;
+    text-decoration: none;
+}
+/* .card2 .btn-container{
+    background: none;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border: none;
+} */
+.card3{
+    width: 60%;
+    margin: auto 0;
+    padding: 24px;
+    padding-right: 56px;
+    position: relative;
+}
+.card3 .heading{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+.card3 .caption{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+.right-btn{
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+/*
+*   Styke for Pricing section
+*/
+.pricing{
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+.price-card{
+    height: 650px !important;
+}
+.price-card .pre-heading{
+    font-weight: 700;
+    font-size: 20px;
+    position: relative;
+}
+.price-card .heading p{
+    font-weight: 700;
+    font-size: 50px;
+}
+.price-card .heading span{
+    font-weight: 700;
+    font-size: 16px;
+}
+.price-card .caption{
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid gray;
+}
+.benefits{
+    padding-top: 16px;
+}
+.benefits li{
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+}
+.price-card .btn-container{
+    position: absolute;
+    bottom: 36px;
+    left: 110px;
+}
+.price-card:hover{
+    background-color: #000000;
+    color: white;
+    box-shadow: 8px 18px rgb(158, 151, 151);
+}
+
+
+/*
+*   Style for services section
+*/
+.service{
+    margin: 0 -16px;
+}
+.price-card, .service-card{
+    padding: 16px 56px;
+    text-align: center;
+    background-color: var(--card);
+    margin: 16px;
+    border-radius: 12px;
+    height: 600px;
+    position: relative;
+    margin-bottom: 56px;
+}
+.service .pre-heading{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+}
+.service .heading{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 580;
+    font-size: 28px;
+    line-height: 36px;
+}
+.service .btn-container{
+    /* margin: 0 auto !important; */
+    position: absolute;
+    bottom: 72px;
+    left: 119px;
+}
+
+
+/*
+*   Style for works section
+*/
+.header-center{
+    margin: auto 0;
+    text-align: center;
+}
+.header-center .caption{
+    text-align: center;
+    margin: auto 0;
+}
+.works-text-style input{
+    margin-top: 96px;
+    color: white;
+}
+.work{
+    margin-bottom: 96px;
+}
+.work input{
+    margin-top: 28px;
+    margin-left: 24px;
+}
+.work .heading{
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 22px;
+    margin-left: 24px;
+}
+.work .caption{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 24px;
+}
+
+
+/*
+*   Style for the blog section
+*/
+.blog-text-style input{
+    margin-top: 144px;
+}
+.bigHeading{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 40px;
+}
+.bigHeading p{
+    margin: 24px 0;
+}
+.blog{
+    margin-bottom: 96px;
+}
+.blog input{
+    margin: 16px 24px;
+}
+.blog .heading{
+    margin: 0 24px;
+    font-family: 'Inter';
+    font-size: 22px;
+    font-weight: bold;
+}
+.blog .caption{
+    margin: 16px 24px;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 17px;
+}
+
+
+/*
+*   Style for yellow panel for news and updates
+*/
+.news-and-updates{
+    width: 100%;
+    margin: 96px 12px 56px 12px;
+}
+.news-and-updates .heading{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 40px;
+}
+.news-and-updates input::placeholder, .news-and-updates input, button{
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: bolder;
+    padding: 14px 2px;
+    color: #000000;
+    opacity: 1;
+    width: 90%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--black);
+}
+.news-and-updates img{
+    margin: auto 0;
+}
+.side-text-and-link{
+    padding-right: 16px;
+    padding-left: 36px;
+    font-family: 'Inter';
+    font-size: 17px;
+    line-height: 26px;
+}
+.work input, .works-text-style input, .blog-text-style input, .blog input, .side-text-and-link input{
+    font-size: 15px;
+    width: 100px;
+    padding: 7px;
+    background: none;
+    border: 1px solid var(--black);
+    border-radius: 30px;
+}
+
+
+/*
+*   Style for Footer
+*/
+.footer-logo{
+    margin-top: 120px;
+    font-size: 38px;
+    font-family: 'Inter';
+    line-height: 47px;
+    font-weight: 800;
+}
+.horizontal-line{
+    height: 2px;
+    background-color: #8F8F8F;
+    width: 100%;
+    margin-bottom: 55px;
+}
+.footerRow .heading{
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 25px;
+}
+.footerRow .caption{
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 26px;
+}
+.terms-condition, .copyright{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+}
+.terms-condition{
+    margin-left: -16px;
+}
+.terms-condition p{
+    padding: 0 16px;
+}

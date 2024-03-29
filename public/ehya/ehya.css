@@ -1,0 +1,372 @@
+/*
+*   Devloper Name:  Lalit Mishra
+*   Devloper ID:    24DEV018
+*   Date:           9 Feb 2024
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 0;
+    width: 100%;
+}
+
+.head{
+    justify-content: space-between;
+    margin: 0 auto;
+    line-height: 75px;
+    width: 1170px;
+    display: flex;
+}
+.logo{
+    display: flex;
+    align-self: center;
+}
+.navbar{
+    display: flex;
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+.navbar li{
+    padding: 0 5px;
+    margin: 0 15px;
+}
+.landings{
+    display: none;
+}
+.pages{
+    display: none;
+}
+.getItNow{
+    margin: 0 16px;
+    align-self: center;
+    padding: 12px 20px;
+    border: 3px solid #1565D8;
+    border-radius: 7px;
+    background-color: white;
+    color: #1565D8;
+    font-weight: 800;
+}
+
+.section1{
+    padding: 36px 0;
+    width: 1170px;
+    display: flex;
+    margin: 0 auto;
+}
+.bigImage{
+    display: flex;
+    align-self: center;
+    margin: 16px;
+}
+.sideText{
+    display: flex;
+    align-self: center;
+    padding: 20px;
+}
+.textGroup1 h4{
+    font-size: 19px;
+    font-weight: lighter;
+    line-height: 36px;
+}
+.textGroup1 h1{
+    color: black;
+    font-size: 44px;
+}
+.consultBtn input{
+    font-size: 16px;
+    background-color: #1565D8;
+    color: white;
+    font-weight: 600;
+    padding: 16px 28px;
+    border-radius: 12px;
+    border: 0px;
+}
+
+.section2{
+    margin: 0 auto;
+    padding: 75px 0;
+    max-width: 100%;
+    background-color: #F3F7FD;
+}
+.textGroup2{
+    font-family: sans-serif;
+    text-align: center;
+}
+.ourService{
+    text-transform: uppercase;
+    font-size: smaller;
+    color: #36B37E;
+}
+.textGroup2 h2{
+    font-family: sans-serif;
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+.contentOS{
+    display: flex;
+    align-self: center;
+    width: 60%;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    line-height: 32px;
+}
+.textGroup3{
+    display: flex;
+    justify-content: center;
+    padding: 0 36px;
+    margin: 20px 0;
+}
+.textGroup3 p{
+    margin: 18px;
+    font-family: sans-serif;
+    font-weight: light;
+}
+
+.container{
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 15px;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.col{
+    width: calc(100% /3);
+}
+.card{
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    border-radius: 30px;
+    border: 3px solid rgb(211, 211, 211);
+    padding: 16px;
+}
+
+.icon{
+    background-color: white;
+    width: fit-content;
+    padding: 8px;
+    margin: 22px;
+    border: 3px solid rgb(187, 187, 187);
+    border-radius: 15%;
+}
+.content{
+    padding: 15px;
+    margin: 10px;
+}
+.cardLink{
+    padding: 15px;
+    margin: 10px;
+}
+
+.section3{
+    max-width: 100%;
+    margin: 0 auto;
+    padding:  60px 0 0 0;
+    background-color: white;
+}
+.textGroup4{
+    margin: 0 auto;
+    width: 42%;
+    text-align: center;
+    font-family: sans-serif;
+}
+.tips{
+    text-transform: uppercase;
+    font-size: smaller;
+    color: #36B37E;
+}
+.textGroup4 h2{
+    font-family: sans-serif;
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+.contentTips{
+    display: flex;
+    align-self: center;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    line-height: 32px;
+}
+.container2{
+    width: 1170px;
+    margin: 0 auto;
+}
+.row2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.col2{
+    width: 500px;
+    height: 600px;
+    border-radius: 30px;
+    margin: 56px 0 36px 0;
+}
+#img1{
+    background-image: linear-gradient(-180deg, rgba(10, 10, 10, 0.315),#5A7184), url('../ehya/ehya_res/Image.png');
+    background-repeat: no-repeat;
+}
+#img2{
+    background-image: linear-gradient(-180deg, rgba(10, 10, 10, 0.315),#5A7184), url('../ehya/ehya_res/Image2.png');
+    background-repeat: no-repeat;
+}
+#img1 h2, #img2 h2{
+    font-family: sans-serif;
+    font-size: 28px;
+    text-align: left;
+    padding: 36px;
+    font-weight: bold;
+    margin-top: 400px;
+    margin-bottom: 28px;
+    color: white;
+}
+
+.section4{
+    margin: 0 auto;
+    padding: 75px 0 0 0;
+    max-width: 100%;
+}
+
+.row3{
+    margin: 0 auto;
+    width: 1170px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+}
+.col3{
+    width: calc(100%/3);
+    margin: auto;
+}
+.card3{
+    background-color: white;
+    padding: 16px;
+    margin: 20px;
+    height: 250px;
+    align-content: center;
+}
+.card3 img{
+    padding: 16px;
+    border: 3px solid rgb(228, 228, 228);
+    border-radius: 15%;
+}
+.yourBenefits{
+    text-transform: uppercase;
+    font-size: smaller;
+    color: #36B37E;
+}
+.card3 h2{
+    font-family: sans-serif;
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+.section5{
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.borderTop{
+    border-top: 3px solid #5a718465;
+    width: 1170px;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-bottom: 125px;
+}
+.containerLast{
+    margin: 0 auto;
+    width: 1170px;
+    margin-bottom: 60px;
+}
+.row4{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col4{
+    text-align: center;
+    margin: 0 auto;
+    width: 250px;
+}
+.lastLike{
+    height: 50px;
+}
+.logo2{
+    display: flex;
+    justify-content: center;
+}
+.logo2 h3{
+    margin-left: 16px;
+}
+footer{
+    width: auto;
+    background-color: #0D2436;
+    color: white;
+}
+
+.footCon{
+    margin: 0 auto;
+    display: flex;
+    width: 1170px;
+}
+.sideLinks{
+    width: 35%;
+    padding: 60px;
+}
+.mediaLinks{
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.socialMediaIcon{
+    width: 15px;
+    height: 15px;
+    margin: 35px 15px 0 15px;
+    background-color: #5A7184;
+}
+.feedback{
+    width: 65%;
+    padding: 60px 16px 60px 0;
+    margin-left: -60px;
+}
+.feedback input{
+    margin-top: 24px;
+    line-height: 28px;
+    padding: 12px;
+    width: 300px;
+    border-radius: 15px;
+}
+.feedback button{
+    margin-top: 24px;
+    line-height: 28px;
+    padding: 12px;
+    width: 150px;
+    background-color: #1565D8;
+    border: none;
+    border-radius: 15px;
+}
+.feedback h2{
+    font-family: sans-serif;
+    font-size: 26px;
+}
+
+.copyright{
+    text-align: center;
+}
+.copyright p{
+    padding: 24px;
+    color: #5A7184;
+}

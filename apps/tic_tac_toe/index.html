@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+
+    <style>
+        td{
+            text-align: center;
+            height: 120px;
+            width: 120px;
+            color: white;
+            font-family: sans-serif;
+            font-size: 50px;
+            border: 2px solid black;
+            border-radius: 15px;
+            background-color: cadetblue;
+            cursor: pointer;
+        }
+        #resetBtn{
+            height: 50px;
+            width: 250px;
+            font-size: 25px;
+            color: cornsilk;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="#efc">
+    <div id="headerName"> 
+        <!--Added the details of Developer here-->
+    </div>
+
+    <div align="center">
+        <h3>Tic-Tac-Toe</h3>
+        <table id="myTable">
+            <tr>
+                <td id="0" class="0" onclick="cellClicked(this), checkWin()"></td>
+                <td id="1" class="1" onclick="cellClicked(this), checkWin()"></td>
+                <td id="2" class="2" onclick="cellClicked(this), checkWin()"></td>
+            </tr>
+            <tr>
+                <td id="3" class="3" onclick="cellClicked(this), checkWin()"></td>
+                <td id="4" class="4" onclick="cellClicked(this), checkWin()"></td>
+                <td id="5" class="5" onclick="cellClicked(this), checkWin()"></td>
+            </tr>
+            <tr>
+                <td id="6" class="6" onclick="cellClicked(this), checkWin()"></td>
+                <td id="7" class="7" onclick="cellClicked(this), checkWin()"></td>
+                <td id="8" class="8" onclick="cellClicked(this), checkWin()"></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div align="center">
+        <h3 id="statusBtn">X's Turn</h3>
+        <input id="resetBtn" type="button" value="Restart" onclick="resetGame()">
+    </div>
+
+    <script>
+        //To create header of Name.
+        head = document.getElementById("headerName");
+        headtext = document.getElementById("headerName").innerText;
+        let h1 = document.createElement("h4");
+        let h1Text = document.createTextNode("Name: Lalit Mishra");
+        let h2 = document.createElement("h4");
+        let h2Text = document.createTextNode("DevID: 24DEV018");
+        h1.appendChild(h1Text);
+        head.appendChild(h1);
+        h2.appendChild(h2Text);
+        head.appendChild(h2);
+
+
+        //for storing all the needed variables:
+        const cell = document.querySelectorAll("td");
+        const statusBtn = document.getElementById("statusBtn");
+        let fixed = ["", "", "", "", "", "", "", "", ""];
+        let player = "X";
+    
+
+        //when user click any cell, we will start the game:
+        let running = true;
+        function cellClicked(el) {
+            var target = el.getAttribute("class");
+            if(fixed[target]!="" || !running){
+                return;
+            }
+            changeCell(el, target);
+            if(!fixed.includes("")){
+                statusBtn.innerText="Draw!";
+                running=false;
+            }
+            else{
+                changeTurn();
+            }
+        }
+
+        //To update the cell:
+        function changeCell(cell, index){
+            if(running){
+                fixed[index]=index;
+                cell.innerText=player;
+                cell.style.color="white";
+            }
+        }
+
+        //To change turns of the player:
+        function changeTurn() {
+            player = (player=="X") ? "O": "X";
+            statusBtn.innerText = player+"'s Turn";
+        }
+
+        //To check win conditions:
+        function checkWin(){
+            let a = document.getElementById("0").innerText;
+            let b = document.getElementById("1").innerText;
+            let c = document.getElementById("2").innerText;
+            let d = document.getElementById("3").innerText;
+            let e = document.getElementById("4").innerText;
+            let f = document.getElementById("5").innerText;
+            let g = document.getElementById("6").innerText;
+            let h = document.getElementById("7").innerText;
+            let i = document.getElementById("8").innerText;
+
+            if(a=="X" && b=="X" && c=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(a=="O" && b=="O" && c=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(d=="X" && e=="X" && f=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(d=="O" && e=="O" && f=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(g=="X" && h=="X" && i=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(g=="O" && h=="O" && i=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(a=="X" && d=="X" && g=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(a=="O" && d=="O" && g=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(b=="X" && e=="X" && h=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(b=="O" && e=="O" && h=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(c=="X" && f=="X" && i=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(c=="O" && f=="O" && i=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(a=="X" && e=="X" && i=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(a=="O" && e=="O" && i=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+            else if(g=="X" && e=="X" && c=="X"){
+                statusBtn.innerText="X wins!";
+                running=false;
+            }
+            else if(g=="O" && e=="O" && c=="O"){
+                statusBtn.innerText="O wins!";
+                running=false;
+            }
+        }
+
+
+        //to reset the game:
+        function resetGame(){
+            for(let i=0; i<cell.length; i++){
+                cell[i].style.color="cadetblue";
+                cell[i].innerText="";
+                fixed = ["", "", "", "", "", "", "", "", ""];
+                running=true;
+                statusBtn.innerText="X's Turn";
+            }
+        }
+    </script>
+</body>
+</html>
