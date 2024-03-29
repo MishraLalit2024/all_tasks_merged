@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data of paricular User</title>
+        <link rel="stylesheet" href="jsonplaceholder/style.css">
+    </head>
+    <body>
+        <header class="padNorm">
+            <h3>Name: Lalit Mishra</h3>
+        </header>
+        <main>
+            <div>
+                <h1>Details</h1>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="bolder">User-Id</td>
+                            <td id="uid"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">Id</td>
+                            <td id="id"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">Slug</td>
+                            <td id="slug"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">URL</td>
+                            <td id="url"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">Title</td>
+                            <td id="title"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">Content</td>
+                            <td id="content"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">Status</td>
+                            <td id="status"></td>
+                        </tr>
+                        <tr>
+                            <td class="bolder">Category</td>
+                            <td id="cat"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button id="cShower" class="commentBtn padNorm" onclick="hider()">Comments</button>
+            <button id="cHider" class="commentBtn padNorm" onclick="hider2()" hidden="true">Hide Comment</button>
+
+            <div id="comment" class="comment" hidden="true">
+
+            </div>
+        </main>
+        <footer class="padNorm textCenter">
+            <p>Developed in India!</p>
+        </footer>
+
+
+        <script>
+            fetch('https://jsonplaceholder.typicode.com/todos/')
+                .then(response => response.json())
+                .then(json => displayData(json))
+
+
+            var finder = new URLSearchParams(document.location.search);
+            var keyToDisplay = Number(finder.get('id'))
+            function displayData(data){
+                var uid = data[keyToDisplay-1].userId;
+                document.getElementById('uid').innerText = uid;
+
+                var id = data[keyToDisplay-1].id;
+                document.getElementById('id').innerText = id;
+
+                var slug = data[keyToDisplay-1].slug;
+                document.getElementById('slug').innerText = slug;
+
+                var url = data[keyToDisplay-1].url;
+                document.getElementById('url').innerText = url;
+
+                var title = data[keyToDisplay-1].title;
+                document.getElementById('title').innerText = title;
+
+                var content = data[keyToDisplay-1].content;
+                document.getElementById('content').innerText = content;
+
+                var status = data[keyToDisplay-1].status;
+                document.getElementById('status').innerText = status;
+
+                var cat = data[keyToDisplay-1].category;
+                document.getElementById('cat').innerText = cat;
+            }
+
+
+            var id = finder.get('id');
+            fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`)
+                .then(response => response.json())
+                .then(json => displayComments(json))
+            
+            function displayComments(data){
+                console.log(data);
+                commentStr = `<p>`;
+                for (x in data){
+                    let name = data[x].name;
+                    let comment = data[x].body;
+                    commentStr += `<b>Name:&nbsp;${name}</b></p><p>${comment}</p>`;
+                }
+                document.getElementById("comment").innerHTML = commentStr;
+            }
+
+            function hider(){
+                document.getElementById('comment').hidden = false;
+                document.getElementById('cShower').hidden = true;
+                document.getElementById('cHider').hidden = false;
+            }
+            
+            function hider2(){
+                document.getElementById('comment').hidden = true;
+                document.getElementById('cShower').hidden = false;
+                document.getElementById('cHider').hidden =  true;
+            }
+        </script>
+    </body>
+</html>

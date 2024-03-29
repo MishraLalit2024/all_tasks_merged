@@ -11,6 +11,7 @@ app.use(express.json())
 app.use(express.static(__dirname + '/public'));
 app.use(require('./routes/router'))
 app.use(require('./routes/delimiter/router'))
+app.use(require('./routes/jsonplaceholder/router'))
 
 
 app.listen(port, ()=>{

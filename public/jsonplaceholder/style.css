@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.textCenter{
+    text-align: center;
+}
+.padNorm{
+    padding: 12px 28px;
+}
+.bolder{
+    font-weight: 600;
+}
+
+main{
+    padding: 24px 0;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    margin: auto 0;
+    background-color: rgb(8, 119, 119);
+    color: white;
+}
+
+.homeBtn{
+    padding: 24px 54px;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: burlywood;
+    border: 1px solid sienna;
+    border-radius: 24px;
+    box-shadow: 0px 0px 0px 2px rgb(197, 197, 197);
+}
+
+
+.reportTable{
+    display: flex;
+    padding: 0 50px;
+}
+table{
+    width: 75%;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th{
+    font-size: 16px;
+    margin: 0;
+    font-weight: 600;
+    padding: 16px 15px;
+    background-color: rgb(247, 136, 0);
+    border-left: 1px solid black;
+    border-bottom: 2px solid black;
+}
+td{
+    text-align: left;
+    font-size: 13px;
+    font-weight: 200;
+    margin: 0;
+    padding: 4px 15px;
+    background-color: bisque;
+    border-left: 1px solid black;
+    border-bottom: 1px dashed black;
+}
+tr:nth-child(even) td{background-color: rgb(247, 174, 86);}
+
+.comment{
+    margin: 0 auto;
+    text-align: left;
+    padding: 8px 16px;
+    width: 60%;
+    background-color: rgb(123, 155, 59);
+}
+
+.commentBtn{
+    margin: 0 auto;
+    margin: 10px 0;
+}
+
+.paginator{
+    margin: 15px 0;
+}
+
+#search{
+    margin: 0 0 15px 0;
+}

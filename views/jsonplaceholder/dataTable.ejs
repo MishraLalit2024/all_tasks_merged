@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Data: Fetched from API</title>
+    <link rel="stylesheet" href="jsonplaceholder/style.css">
+</head>
+
+<body>
+    <header class="padNorm">
+        <h3>Name: Lalit Mishra</h3>
+    </header>
+    <main>
+
+        <div class="paginator">
+            <button id="first"      >   << </button>
+            <button id="prev"       >   <  </button>
+            <button id="current"    >   1  </button> 
+            <button id="next"       >   >  </button>
+            <button id="last"       >   >> </button>
+        </div>
+        <div>
+            <input type="text" autofocus name="search" id="searchInput" placeholder="Search title here"/>
+            <input type="button" value="Go" id="search">
+        </div>
+        <table border="1" id="table">
+            <thead></thead>
+            <tbody></tbody>
+        </table>
+        <div id="error"></div>
+    </main>
+    <footer class="padNorm textCenter">
+        <p>Developed in India!</p>
+    </footer>
+
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/todos/')
+        .then(response  => response.json())
+        .then(json      => dataMaker(json))
+
+
+        async function dataMaker (dataName) {
+            var firstData = paginate(dataName, 1);
+            rendertable(firstData);
+
+            let lastPage    = Math.ceil((dataName.length)/pageSize);
+            let currentPage = Number(document.getElementById('current').innerText);
+
+            document.getElementById('first').addEventListener('click', ()=>{
+                nextPage(dataName, 0)
+                currentPage =1;
+            })
+            document.getElementById('next').addEventListener('click', ()=>{
+                nextPage(dataName, currentPage);
+                currentPage++;
+            })
+            document.getElementById('prev').addEventListener('click', ()=>{
+                prevPage(dataName, currentPage);
+                currentPage--;
+            })
+            document.getElementById('last').addEventListener('click', ()=>{
+                nextPage(dataName, lastPage-1);
+                currentPage= lastPage;
+            })
+
+
+            //Code for the search algorithm:
+            let search = [];
+
+            document.getElementById('search').addEventListener('click', ()=>{
+                const value = document.getElementById('searchInput').value;
+                for (x in dataName){
+                    if(dataName[x]['title'].toString().includes(value)){
+                        search.push(dataName[x]);
+                    }
+                }
+                if(search.length==0){
+                    document.querySelector('table').style.display = "none";
+                    document.getElementById('error').innerText = "No Data Available";
+                }
+                else{
+                    document.querySelector('table').style.display = "block";
+                    rendertable(search)
+                }
+            })
+
+            await new Promise((resolve, reject) => setTimeout(resolve, 1000));
+        }
+
+        //Code to render the table:
+        function rendertable(arr) {
+                var headerStr = `<tr>`;
+                Object.keys(arr[0]).forEach(el => {
+                    if(el==='content'|| el ==='url'|| el==='publishedAt'||el==='updatedAt'){
+                        headerStr+='';
+                    }
+                    else{
+                        headerStr += `<th>${el}</th>`;
+                    }
+                });
+                headerStr += `<th></th></tr>`;
+
+                document.querySelector('thead').innerHTML=headerStr;
+
+                bodyStr = ``;
+                for (x in arr) {
+                    bodyStr += `<tr>`;
+                        Object.keys(arr[x]).forEach(el =>{
+                            if(el ==='image' || el ==='thumbnail'){
+                                bodyStr+=`<td><img src="${arr[x][el]}" height=50px width="50px"></td>`;
+                            }
+                            else if(el ==='content'|| el ==='url'||el==='publishedAt'||el==='updatedAt'){
+                                bodyStr+='';
+                            }
+                            else{
+                                bodyStr += `<td>${arr[x][el]}</td>`;
+                            }
+                        });
+                    bodyStr += `<td><a href="./jph-details?id=${Number(arr[x]['id'])}" target="_blank"><button>View More</button></a></td></tr>`;
+                }
+                document.querySelector('tbody').innerHTML = bodyStr;
+            }
+
+        //Code for pagination:
+        let pageSize = 5;
+
+        function paginate(data, page){
+            const startIndex = (page-1)*pageSize;
+            const endIndex = startIndex + pageSize;
+            return data.slice(startIndex, endIndex);
+        }
+        function nextPage(arr, current){
+            var next = current+1;
+            var data = paginate(arr, next);
+            rendertable(data);
+            document.getElementById('current').innerText = next;
+        }
+        function prevPage(arr, current){
+            var prev = current-1;
+            var data = paginate(arr, prev);
+            rendertable(data);
+            document.getElementById('current').innerText = prev;
+        }
+
+    </script>
+</body>
+</html>
