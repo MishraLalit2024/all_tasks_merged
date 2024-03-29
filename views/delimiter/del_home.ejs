@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Filters</title>
+    <link rel="stylesheet" href="/delimiter/style.css">
+
+    <!-- Developer Name:    Lalit Mishra    -->
+    <!-- Developer ID:      24DEV018        -->
+    <!-- Date:              05-MAR-2024      -->
+</head>
+<body>
+    <header class="padNorm">
+        <%- include('header') %>
+    </header>
+
+    <main>
+        <div id="searchWiz">
+            <p>_ : first-name,&Tab;^ : last-name,&Tab;$ : email-id,&Tab;: : city,&Tab;} : status</p>
+            <form action="/delPost" method="post">
+                <input type="text" autofocus id="query" name="input" placeholder="Enter Delimited Search Query" value="<%= query %>">
+                <input type="submit" value="Go">
+            </form>
+        </div>
+
+        <div>
+            <br/>
+            <table>
+                <thead>
+                    <tr>
+                        <% rows.forEach(element => { %>
+                            <th><%= element.name %></th>
+                        <% }); %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for( let i = 0; i < data.length; i++ ) { %>
+                        <tr>
+                            <% var val = Object.values(data[i]); %>
+                            <% val.forEach( (ele) => { %>
+                                <td>
+                                    <%= ele %>
+                                </td>
+                            <% }); %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="padNorm">
+        <%- include('footer') %>
+    </footer>
+
+    <script>
+        var ele = document.getElementById('searchWiz');
+        ele.addEventListener('load', (e)=>{
+            document.getElementById('query').focus();
+        })
+    </script>
+</body>
+
+</html>
