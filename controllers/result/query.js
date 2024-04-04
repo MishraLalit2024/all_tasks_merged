@@ -2,18 +2,18 @@ const dbconn = require('../../conn/db');
 
 function selectQuery(req, res, next){
 
-    var recordPerPage = 10;
-    var total = 220;
-    var page = Number(req.query.page) || 1;
+    let recordPerPage = 10;
+    let total = 220;
+    let page = Number(req.query.page) || 1;
     // console.log(page);
-    var skip = (page - 1) * recordPerPage;
+    let skip = (page - 1) * recordPerPage;
     // console.log(skip);
-    var limit = skip+', '+recordPerPage; 
+    let limit = skip+', '+recordPerPage; 
     // console.log(limit);
     lastPage = Math.floor(total/recordPerPage);
     // console.log(lastPage);
 
-    var sql1 = `set @a:=0; select @a:=@a+1 as 'Sr No',result_student_master.fname as 'First Name', result_student_master.lname as 'Last Name', sum(case when result_student_result.examId=1 then result_student_result.obtainedMarks end) as 'Prelims Theory', sum(case when result_student_result.examId=2 then result_student_result.obtainedMarks end) as 'Prelims Practical', sum(case when result_student_result.examId=3 then result_student_result.obtainedMarks end) as 'Terminal Theory', sum(case when result_student_result.examId=4 then result_student_result.obtainedMarks end) as 'Terminal Practical', sum(case when result_student_result.examId=5 then result_student_result.obtainedMarks end) as 'Final Theory', sum(case when result_student_result.examId=6 then result_student_result.obtainedMarks end) as 'Final Practical', sum(case when result_student_result.examId>0 and result_student_result.examId<7 then result_student_result.obtainedMarks end) as 'Total' from result_student_master cross join result_student_result on result_student_master.srno = result_student_result.studId group by result_student_result.studId order by studId limit ${limit}`;
+    let sql1 = `set @a:=0; select @a:=@a+1 as 'Sr No',result_student_master.fname as 'First Name', result_student_master.lname as 'Last Name', sum(case when result_student_result.examId=1 then result_student_result.obtainedMarks end) as 'Prelims Theory', sum(case when result_student_result.examId=2 then result_student_result.obtainedMarks end) as 'Prelims Practical', sum(case when result_student_result.examId=3 then result_student_result.obtainedMarks end) as 'Terminal Theory', sum(case when result_student_result.examId=4 then result_student_result.obtainedMarks end) as 'Terminal Practical', sum(case when result_student_result.examId=5 then result_student_result.obtainedMarks end) as 'Final Theory', sum(case when result_student_result.examId=6 then result_student_result.obtainedMarks end) as 'Final Practical', sum(case when result_student_result.examId>0 and result_student_result.examId<7 then result_student_result.obtainedMarks end) as 'Total' from result_student_master cross join result_student_result on result_student_master.srno = result_student_result.studId group by result_student_result.studId order by studId limit ${limit}`;
     
     dbconn.query(sql1, (err, data, fields)=>{
         if (err) throw err;
@@ -35,7 +35,7 @@ function selectQuery(req, res, next){
 
 function marksheetGen(req, res, next){
 
-    var studId = (req.query.id) || 1;
+    let studId = (req.query.id) || 1;
     console.log(studId);
     
     if(Number(studId)>220 || Number(studId)<0 || isNaN(Number(studId))){
@@ -43,7 +43,7 @@ function marksheetGen(req, res, next){
         res.redirect(302, '/allResult');
     }
     else{
-        var sql2 = `select result_subject_master.subjectName,
+        let sql2 = `select result_subject_master.subjectName,
         sum(case 
             when examId='1' and studId='${studId}' 
             then obtainedMarks end) as marks1, 

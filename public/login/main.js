@@ -50,11 +50,11 @@ form.addEventListener("submit", async function sendData(event){
     })
     .then(data=>{
         console.log("Server response:" + data['data']);
-        var linker = document.getElementById('linker');
-        var email = document.getElementById('email').value;
+        let linker = document.getElementById('linker');
+        let email = document.getElementById('email').value;
         linker.style.display = "flex";
         linker.style.flexDirection = "column";
-        var link = `<p>Thank you registering</p><p>CLick on below link to activate your account</p><a href="http://localhost:9900/activate?act-code=${data['data']}&email=${email}">http://localhost:9900/activate?act-code=${data['data']}&email=${email}</a>`
+        let link = `<p>Thank you registering</p><p>CLick on below link to activate your account</p><a href="http://localhost:9900/activate?act-code=${data['data']}&email=${email}">http://localhost:9900/activate?act-code=${data['data']}&email=${email}</a>`
         linker.innerHTML=link;
     })
     .catch(error => {

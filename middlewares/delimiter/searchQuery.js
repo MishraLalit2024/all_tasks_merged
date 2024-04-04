@@ -15,7 +15,7 @@ const splitter          = require("./splitter");
 function searchQuery(req, res, next){
 
     //calling the splitter function to use fetch keywords from the user Input:
-    var data            = splitter(req, res, next);
+    let data            = splitter(req, res, next);
 
     // console.log(data[0]);
     function finalStringGen(arr, fieldName){
@@ -32,15 +32,15 @@ function searchQuery(req, res, next){
     }
 
     //declaring variables to get the ORed Strings:
-    var fnameStr        = finalStringGen(data[0], 'firstName');
-    var lastNameStr     = finalStringGen(data[1], 'lastName');
-    var emailStr        = finalStringGen(data[2], 'email');
-    var statusStr       = finalStringGen(data[3], 'statusOfStudent');
-    var phoneStr        = finalStringGen(data[4], 'phone');
-    var cityStr         = finalStringGen(data[5], 'city');
+    let fnameStr        = finalStringGen(data[0], 'firstName');
+    let lastNameStr     = finalStringGen(data[1], 'lastName');
+    let emailStr        = finalStringGen(data[2], 'email');
+    let statusStr       = finalStringGen(data[3], 'statusOfStudent');
+    let phoneStr        = finalStringGen(data[4], 'phone');
+    let cityStr         = finalStringGen(data[5], 'city');
 
 
-    var sql = `select srno as 'Student ID', semester as 'Semester', firstName as 'First Name', lastName as 'Last Name', (select floor(datediff(curdate(), dob)/365.25)) as 'Age', phone as 'Mobile Number', email as 'Email ID', city as 'City', statusOfStudent as 'Status' from delimited_search where (${fnameStr}) and (${lastNameStr}) and (${emailStr}) and (${phoneStr}) and (${cityStr}) and (${statusStr}) limit 100`;
+    let sql = `select srno as 'Student ID', semester as 'Semester', firstName as 'First Name', lastName as 'Last Name', (select floor(datediff(curdate(), dob)/365.25)) as 'Age', phone as 'Mobile Number', email as 'Email ID', city as 'City', statusOfStudent as 'Status' from delimited_search where (${fnameStr}) and (${lastNameStr}) and (${emailStr}) and (${phoneStr}) and (${cityStr}) and (${statusStr}) limit 100`;
 
     console.log(sql);
 

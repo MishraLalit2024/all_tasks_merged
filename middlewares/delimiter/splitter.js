@@ -10,10 +10,10 @@
 
 function splitter(req, res, next){
     
-    var str = JSON.stringify(req.body.input);
+    let str = JSON.stringify(req.body.input);
     
-    var arr = [];
-    var empty = "";
+    let arr = [];
+    let empty = "";
 
     for (let i = 1; i < str.length-1; i++) {
         const ch = str.charAt(i);
@@ -34,11 +34,11 @@ function splitter(req, res, next){
     }
 
     //declaring empty array for fields that has search options:
-    var firstName=[], lastName=[], email=[], status=[],mobile=[], city=[];
+    let firstName=[], lastName=[], email=[], status=[],mobile=[], city=[];
 
     for (let i = 0; i < str.length; i++) {
         if(i%2==0){
-            var operator = arr[i];
+            let operator = arr[i];
 
             //switch case for fetching the operator and assigning fields to the keywords:
             switch (operator) {
@@ -68,7 +68,7 @@ function splitter(req, res, next){
     }
 
     //Creating and returning the result:
-    var dataInput = [firstName, lastName, email, status, mobile, city];
+    let dataInput = [firstName, lastName, email, status, mobile, city];
     return dataInput;
 }
 

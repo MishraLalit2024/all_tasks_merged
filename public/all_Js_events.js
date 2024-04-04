@@ -19,7 +19,7 @@ head.appendChild(h2);
 
 
 function onChangeFun( ) {
-    var x = document.getElementById("city").value;
+    let x = document.getElementById("city").value;
     document.getElementById("demoOnChange").innerHTML = "you selected: " + x; 
     alert("OnChange Event Triggered.");
 }
@@ -52,7 +52,7 @@ function onLoadFun() {
     // alert("Image is loaded.")
 }
 function onInputFun() {
-    var x = document.getElementById("onInputVar").value;
+    let x = document.getElementById("onInputlet").value;
     document.getElementById("onInputDemo").innerHTML="You typed: "+x;
 }
 function onMouseDownFun() {
@@ -62,7 +62,7 @@ function onMouseUpFun() {
     document.getElementById("onMouseUpDemo").innerHTML="Mouse Up done";
 }
 function onFocusFun() {
-    var x = document.getElementById("onFocusVar").value;
+    let x = document.getElementById("onFocuslet").value;
     document.getElementById("onFocusDemo").innerHTML="You typed: "+x;
 }
 function onMouseMoveFun() {

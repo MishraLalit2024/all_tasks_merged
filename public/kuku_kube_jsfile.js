@@ -30,8 +30,8 @@ function ranCellPicker(){
     return rNum;
 }
 
-var mCount=0;//variable that count the number of click;
-var cellPicker = 0; 
+let mCount=0;//letiable that count the number of click;
+let cellPicker = 0; 
 
 //To add onclick event listener and event handler;
 document.getElementsByClassName("myClick")[0].addEventListener("click", addRowCol);
@@ -88,7 +88,7 @@ function addRowCol(){
 }
  
 //Logic for the Timer:
-var maxTime = 30;
+let maxTime = 30;
 
 let countDown = setInterval(() => {
     maxTime--;

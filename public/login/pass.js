@@ -7,7 +7,7 @@ form.addEventListener("submit", async function postPwd(event){
     const s         = params.get("email");
     pwd             = document.getElementById('c-pass').value;
     rpwd            = document.getElementById('r-pass').value;
-    var formData    = {
+    let formData    = {
         pwd         : pwd,
         email       : s
     }

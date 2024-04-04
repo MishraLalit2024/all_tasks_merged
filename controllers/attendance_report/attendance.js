@@ -6,12 +6,12 @@ function attendanceHome(req, res, next){
 }
 
 function reportMaker(req, res, next){
-    var mon = req.query.m;  //to read the month from the url
+    let mon = req.query.m;  //to read the month from the url
 
-    var noOfRecords, lastPage;
+    let noOfRecords, lastPage;
     const recordPerPage = 12;    
-    var oby = req.query.ob;
-    var page = req.query.page;
+    let oby = req.query.ob;
+    let page = req.query.page;
 
     var sql1 = `select count(*) from attendance_student_master`;
     con.query(sql1, (err, data)=>{
@@ -19,10 +19,10 @@ function reportMaker(req, res, next){
         noOfRecords=data[0]['count(*)'];
         lastPage = Math.ceil(noOfRecords/recordPerPage);
     });
-    var skip = (page-1)*recordPerPage;
-    var limit = skip+', '+recordPerPage;
+    let skip = (page-1)*recordPerPage;
+    let limit = skip+', '+recordPerPage;
     var next = Number(page)+1;
-    var prev = page-1;
+    let prev = page-1;
 
 
     var sql1 = `select count(*) from attendance_working_days where isHoliday='NOO' AND dateStr like '%-${mon}-%'`;

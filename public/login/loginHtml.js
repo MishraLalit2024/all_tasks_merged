@@ -3,9 +3,9 @@ let form = document.querySelector("form");
 form.addEventListener("submit", async function(event){
     event.preventDefault();
 
-    var email = document.getElementById('l-email').value;
-    var pas = document.getElementById('l-pass').value;
-    var data = {
+    let email = document.getElementById('l-email').value;
+    let pas = document.getElementById('l-pass').value;
+    let data = {
         email: email,
         pass: pas
     }
