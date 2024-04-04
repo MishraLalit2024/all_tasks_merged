@@ -4,9 +4,9 @@ const cookieParser = require('cookie-parser')
 const port = 3300;
 
 app.set("view engine", "ejs");
+app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-app.use(express.static(__dirname + '/public'));
 app.use(cookieParser())
 app.use(require('./routes/router'))
 app.use(require('./routes/delimiter/router'))
@@ -15,6 +15,7 @@ app.use(require('./routes/result/route'))
 app.use(require('./routes/jsonplaceholder/router'))
 app.use(require('./routes/login/router'))
 app.use(require('./routes/dynamic_grid/routes'))
+app.use(require('./routes/timezone/routes'))
 
 
 app.listen(port, ()=>{

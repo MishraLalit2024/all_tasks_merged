@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Local Time to Other zones</title>
+    <link rel="stylesheet" href="/timezone/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <p>Lalit Mishra</p>
+            <em>Date: 19-Mar-2024</em>
+        </div>
+    </header>
+
+    <main class="container">
+        <div>
+            <div id="current">
+                Current Local Time: <%= data %>
+            </div>
+            <br><br><br>
+            <div id="time">
+                Time Zones:&nbsp;&nbsp;&nbsp;&nbsp;<select onchange="convertTime()" name="time-zone" id="timeZone">
+        
+                </select>
+            </div>
+                <br><br><br>
+                <div id="converted">
+                    Converted Time for Timezone:<span id="city"></span>
+                    <div id="convert">
+                        &nbsp;
+                    </div>
+                </div>
+        </div>
+    </main>
+
+    <footer class="center">
+        <div class="container">
+            <p>Thank You for visiting.</p>
+        </div>
+    </footer>
+    <script src="/timezone/main.js"></script>
+</body>
+</html>
