@@ -1,8 +1,5 @@
 const express = require('express');
 const app = express()
-const db = require('./conn/db')
-const delimiter = require('./routes/delimiter/router')
-const route = require('./routes/router')
 const cookieParser = require('cookie-parser')
 const port = 3300;
 
