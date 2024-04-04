@@ -4,7 +4,9 @@ var con = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'all_project_merged'
+    database: 'all_project_merged',
+    multipleStatements: true,
+    dateStrings: true
 });
 
 con.connect(function(err) {

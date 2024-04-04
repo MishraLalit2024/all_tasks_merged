@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Marksheet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="result/style.css">
+        <style>
+            body{
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <%- include('header') %>
+        </header>
+
+        <main class="marksheet-main">
+                    <div class="title">
+                        <h1 class="studentName"><%= name.Name %></h1>
+                        <h3>Marksheet</h3>
+                    </div>
+                    <div class="marksheet">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">Subjects</th>
+                                    <th colspan="2">Prelims</th>
+                                    <th colspan="2">Terminal</th>
+                                    <th colspan="2">Final</th>
+                                    <th rowspan="2">Total</th>
+                                </tr>
+                                <tr>
+                                    <th>Theory</th>
+                                    <th>Practical</th>
+                                    <th>Theory</th>
+                                    <th>Practical</th>
+                                    <th>Theory</th>
+                                    <th>Practical</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for( let i = 0; i < data.length; i++ ) { %>
+                                    <tr>
+                                        <% var val = Object.values(data[i]); %>
+                                        <% val.forEach( (ele) => { %>
+                                        <td>
+                                            <%= ele %>
+                                        </td>
+                                        <% }); %>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+                    <div class="footer"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('footer') %>
+        </footer>
+    </body>
+</html>

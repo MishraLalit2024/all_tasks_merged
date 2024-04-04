@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Student Result Report</title>
+        <link rel="stylesheet" href="result/style.css">
+        <style>
+            body{
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <%- include('header') %>
+
+        </header>
+        <main>
+            <div>
+                <%= disabled1 = null %>
+                <% if (prev===0) { %>
+                    <% disabled1="disabled" %>
+                <% } %>
+                <%= disabled2 = null %>
+                <% if (next===lastPage+1) { %>
+                    <% disabled2="disabled" %>
+                <% } %>
+                <a href="./allResult?page=<%= firstPage %>"
+                    ><button tabindex="3" <%= disabled1 %>><<</button
+                ></a>
+                <a href="./allResult?page=<%= prev %>"
+                    ><button tabindex="4" <%= disabled1 %>><</button
+                ></a>
+                <button><%= page %></button>
+                <a href="./allResult?page=<%= next %>"
+                    ><button tabindex="5" <%= disabled2 %>>></button
+                ></a>
+                <a href="./allResult?page=<%= lastPage %>"
+                    ><button tabindex="6" <%= disabled2 %>>>></button
+                ></a>
+            </div>
+            <br>
+            <br>
+            <section class="textCenter reportTable">
+
+                <table cellpadding="0">
+                    <thead>
+                        <tr>
+                            <% column.forEach(element => { %>
+                                <th><%= element['name'] %></th>
+                            <% }); %>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let i = 0; i < data.length; i++ ) { %>
+                            <tr>
+                                
+                                <% var val = Object.values(data[i]); %>
+                                    <% val.forEach( (ele) => { %>
+                                        <td>
+                                            <%= ele %>
+                                        </td>
+                                    <% }); %>
+                                    <td>
+                                        <a href="./marksheet?id=<%= i+1 %>" target="blank">View More</a>
+                                    </td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+        <footer>
+            <%- include('footer') %>
+        </footer>
+    </body>
+</html>
