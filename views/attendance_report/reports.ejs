@@ -1,0 +1,152 @@
+<%# Developer Name:         Lalit Mishra %>
+<%# Date:                   27-Feb-2024 %>
+<%# Description:            This file contains the reports of all students %>
+
+<!<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Attendance Report</title>
+        <style>
+            body{
+                background-color:   #f0f0f0;
+                position:           relative;
+            }
+            section{
+                width:              100%;
+                display:            flex;
+                justify-content:    center;
+            }
+            table{
+                margin:             auto 0;
+                border-top:         2px solid black;
+                border-bottom:      2px solid black;
+                border-right:       1px dashed;
+            }
+            thead th{
+                padding: 18px;
+                background-color:   blanchedalmond;
+                font-weight:        600;
+                font-family:        sans-serif;
+                font-size:          16px;
+                border-bottom:      2px solid black;
+                border-left:        1px dashed;
+            }
+            td{
+                padding: 8px;
+                background-color:   aliceblue;
+                font-weight:        200;
+                font-family:        serif;
+                font-size:          12px;
+                text-align:         center;
+                border-left:        1px dashed;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+
+        <%# Defination of variable to disable the buttons %>
+        <%= month = null %>
+        <%= disabled1 = null %>
+        <% if (prev===0) { %>
+            <% disabled1="disabled" %>
+        <% } %>
+        <%= disabled2 = null %>
+        <% if (next===lastPage+1) { %>
+            <% disabled2="disabled" %>
+        <% } %>
+        <%= disabled3 = null %>
+        <% if (m === '12') { %>
+            <% disabled3="disabled" %>
+            <% month = "December-2023" %>
+        <% } %>
+        <%= disabled4 = null %>
+        <% if (m === '01') { %>
+            <% disabled4="disabled" %>
+            <% month = "January-2024" %>
+        <% } %>
+        <%= disabled5 = null %>
+        <% if (m === '02') { %>
+            <% disabled5="disabled" %>
+            <% month = "February-2024" %>
+        <% } %>
+        <header>
+            <%- include('header') %>
+            <div>
+                <p>
+                    Total Number of records: <%= record %>
+                </p>
+                <%# <p>
+                    <select name="yera" id="yearopt">
+                        <option value="24">E-2024</option>
+                        <option value="23">E-2023</option>
+                    </select>
+                    <input type="submit" value="Change year">
+                </p> %>
+                <p>
+                    Year: 
+                    <select tabindex="1" name="yearFilter" id="yearFilter">
+                        <option value="23">E-2023</option>
+                        <option value="24">E-2024</option>
+                    </select>
+                    Month: 
+                    <select tabindex="2" name="monthFilter" id="monFilter">
+                        <option value="12">A-Dec</option>
+                        <option value="01">A-Jan</option>
+                        <option value="02">A-Feb</option>
+                    </select>
+                </p>
+                <p>Total Number of working days in <%= month %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= workingdays %></p>
+            </div>
+            <div>
+                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= firstPage %>"
+                    ><button tabindex="3" <%= disabled1 %>><<</button
+                ></a>
+                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= prev %>"
+                    ><button tabindex="4" <%= disabled1 %>><</button
+                ></a>
+                <button><%= page %></button>
+                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= next %>"
+                    ><button tabindex="5" <%= disabled2 %>>></button
+                ></a>
+                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= lastPage %>"
+                    ><button tabindex="6" <%= disabled2 %>>>></button
+                ></a>
+            </div>
+            <br>
+        </header>
+
+
+        <main class="table">
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th><a href="report?y=23&m=12&ob=studId&page=1">Student Id</a></th>
+                            <th><a href="report?y=23&m=12&ob=fname&page=1">First Name</a></th>
+                            <th><a href="report?y=23&m=12&ob=lname&page=1">Last Name</a></th>
+                            <th><a href="report?y=23&m=12&ob=noofPresentDays&page=1">No of Present Days</a></th>
+                            <th><a href="report?y=23&m=12&ob=percent&page=1">Percentage &percnt;</a></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for( let i = 0; i < data.length; i++ ) { %>
+                            <tr>
+                                <td><%= data[i].studId %></td>
+                                <td><%= data[i].fname %></td>
+                                <td><%= data[i].lname %></td>
+                                <td><%= data[i].noofPresentDays %></td>
+                                <td><%= data[i].percent.toFixed(2) %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <%- include('footer') %>
+        </footer>
+    </body>
+</html>

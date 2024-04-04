@@ -7,6 +7,10 @@ router.get('/home', auth.authorization, (req, res)=>{
     res.render('home');
 })
 
+router.get('/first-node', auth.authorization, (req, res)=>{
+    res.send('Hello World!');
+})
+
 router.get('/dynamic-rows-cols', auth.authorization, (req, res) => {
     res.sendFile('index.html', {
         root: '../all_tasks_merged/apps/chess_board_pattern'
