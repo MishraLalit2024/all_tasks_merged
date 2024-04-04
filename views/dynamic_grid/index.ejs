@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dynamic Table using SQL query</title>
+    <link rel="stylesheet" href="dynamic_grid/style.css" />
+  </head>
+
+  <body>
+    <header><%- include('header') %></header>
+
+    <main>
+      <h1>Enter your query</h1>
+      <form action="/grid-query" method="post">
+        <input
+          name="name"
+          id="sqlInput"
+          type="text"
+          placeholder="Enter your select query here"
+        />
+        <input type="submit" value="Go" />
+      </form>
+    </main>
+
+    <footer><%- include('footer') %></footer>
+  </body>
+  <!-- <script>
+    async function sldkflk() {
+      console.log("clled");
+      const requestOptions = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: "Fetch POST Request Example" }),
+      };
+      console.log(response);
+
+      const response = await fetch(`http://localhost:3500/validate?page=${1}`, requestOptions);
+      console.log(response);
+    }
+  </script> -->
+</html>

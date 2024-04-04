@@ -1,0 +1,77 @@
+body
+{
+    margin              : 0;
+    padding             : 0;
+    overflow            : hidden;
+}
+
+.textCenter
+{
+    text-align          : center;
+}
+
+.padNorm
+{
+    padding             : 12px 28px;
+}
+
+main
+{
+    padding             : 36px 0;
+    text-align          : center;
+    width               : 100%;
+    justify-content     : center;
+    margin              : auto 0;
+    background-color    : rgb(8, 119, 119);
+    color               : white;
+}
+
+input
+{
+    background-color    : none;
+    padding             : 16px;
+    border              : none;
+    box-shadow          : 2px 2px 2px 2px black;
+}
+
+.reportTable
+{
+    display             : flex;
+    padding             : 0 50px;
+}
+
+table
+{
+    margin              : 0 auto;
+    background-color    : white;
+    color               : black;
+    border              : 1px solid black;
+    border-collapse     : collapse;
+}
+
+th
+{
+    font-size           : 16px;
+    margin              : 0;
+    font-weight         : 600;
+    padding             : 16px 15px;
+    background-color    : rgb(247, 136, 0);
+    border-left         : 1px solid black;
+    border-bottom       : 2px solid black;
+}
+
+td
+{
+    font-size           : 13px;
+    font-weight         : 200;
+    margin              : 0;
+    padding             : 4px 15px;
+    background-color    : bisque;
+    border-left         : 1px solid black;
+    border-bottom       : 1px dashed black;
+}
+
+tr:nth-child(even) td
+{
+    background-color    : rgb(247, 174, 86);
+}

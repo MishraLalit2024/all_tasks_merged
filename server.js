@@ -14,6 +14,7 @@ app.use(require('./routes/attendance_report/server'))
 app.use(require('./routes/result/route'))
 app.use(require('./routes/jsonplaceholder/router'))
 app.use(require('./routes/login/router'))
+app.use(require('./routes/dynamic_grid/routes'))
 
 
 app.listen(port, ()=>{

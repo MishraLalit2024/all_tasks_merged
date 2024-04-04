@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Result of SQL Query</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <%- include('header') %>
+    </header>
+
+    <main>
+        <div>
+            <div>
+                <h6>Your query is</h6>
+                <h5><%= query %></h5>
+            </div>
+
+
+            <%# Defination of variable to disable the buttons %>
+            <%= month = null %>
+            <%= disabled1 = null %>
+            <% if (prev===0) { %>
+                <% disabled1="disabled" %>
+            <% } %>
+            <%= disabled2 = null %>
+            <% if (next===lastPage+1) { %>
+                <% disabled2="disabled" %>
+            <% } %>
+
+
+            <div>
+                <a href="./validate?sql=<%= query %>&page=<%= firstPage %>"
+                    ><button <%= disabled1 %>><<</button
+                ></a>
+                <a href="./validate?sql=<%= query %>&page=<%= prev %>"
+                    ><button <%= disabled1 %>><</button
+                ></a>
+                <button><%= page %></button>
+                <a href="./validate?sql=<%= query %>&page=<%= next %>"
+                    ><button <%= disabled2 %>>></button
+                ></a>
+                <a href="./validate?sql=<%= query %>&page=<%= lastPage %>"
+                    ><button <%= disabled2 %>>>></button
+                ></a>
+            </div>
+
+            
+            <br>
+            <table cellpadding="0">
+                <thead>
+                    <tr>
+                        <% column.forEach(element => { %>
+                            <th><%= element.name %></th>
+                        <% }); %>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for( let i = 0; i < data.length; i++ ) { %>
+                        <tr>
+                            <% var val = Object.values(data[i]); %>
+                            <% val.forEach( (ele) => { %>
+                                <td>
+                                    <%= ele %>
+                                </td>
+                            <% }); %>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('footer') %>
+    </footer>
+</body>
+
+</html>
