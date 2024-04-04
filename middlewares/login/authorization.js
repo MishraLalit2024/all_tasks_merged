@@ -2,9 +2,9 @@ const jwt=require('jsonwebtoken');
 
 
 exports.authorization = (req, res, next) =>{
-    console.log('xcxcfg');
+    // console.log('xcxcfg');
     const token = req.cookies.access_token;
-    console.log(token);
+    // console.log(token);
 
     if(!token){
         console.log('Has no token');

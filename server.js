@@ -13,6 +13,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(cookieParser())
 app.use(require('./routes/router'))
 app.use(require('./routes/delimiter/router'))
+app.use(require('./routes/attendance_report/server'))
 app.use(require('./routes/jsonplaceholder/router'))
 app.use(require('./routes/login/router'))
 

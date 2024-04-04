@@ -84,33 +84,29 @@
                     </select>
                     <input type="submit" value="Change year">
                 </p> %>
-                <p>
-                    Year: 
-                    <select tabindex="1" name="yearFilter" id="yearFilter">
-                        <option value="23">E-2023</option>
-                        <option value="24">E-2024</option>
-                    </select>
-                    Month: 
-                    <select tabindex="2" name="monthFilter" id="monFilter">
-                        <option value="12">A-Dec</option>
-                        <option value="01">A-Jan</option>
-                        <option value="02">A-Feb</option>
-                    </select>
-                </p>
+                <a href="./attendance-report?y=<%= 23 %>&m=<%= 12 %>&ob=<%= ob %>&page=<%= firstPage %>"
+                    ><button tabindex="3">December-2023</button
+                ></a>
+                <a href="./attendance-report?y=<%= 24 %>&m=<%= '01' %>&ob=<%= ob %>&page=<%= firstPage %>"
+                    ><button tabindex="3">January-2024</button
+                ></a>
+                <a href="./attendance-report?y=<%= 24 %>&m=<%= '02' %>&ob=<%= ob %>&page=<%= firstPage %>"
+                    ><button tabindex="3">February-2024</button
+                ></a>
                 <p>Total Number of working days in <%= month %>:&nbsp;&nbsp;&nbsp;&nbsp;<%= workingdays %></p>
             </div>
             <div>
-                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= firstPage %>"
+                <a href="./attendance-report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= firstPage %>"
                     ><button tabindex="3" <%= disabled1 %>><<</button
                 ></a>
-                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= prev %>"
+                <a href="./attendance-report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= prev %>"
                     ><button tabindex="4" <%= disabled1 %>><</button
                 ></a>
                 <button><%= page %></button>
-                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= next %>"
+                <a href="./attendance-report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= next %>"
                     ><button tabindex="5" <%= disabled2 %>>></button
                 ></a>
-                <a href="./report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= lastPage %>"
+                <a href="./attendance-report?y=<%= y %>&m=<%= m %>&ob=<%= ob %>&page=<%= lastPage %>"
                     ><button tabindex="6" <%= disabled2 %>>>></button
                 ></a>
             </div>
@@ -123,11 +119,11 @@
                 <table>
                     <thead>
                         <tr>
-                            <th><a href="report?y=23&m=12&ob=studId&page=1">Student Id</a></th>
-                            <th><a href="report?y=23&m=12&ob=fname&page=1">First Name</a></th>
-                            <th><a href="report?y=23&m=12&ob=lname&page=1">Last Name</a></th>
-                            <th><a href="report?y=23&m=12&ob=noofPresentDays&page=1">No of Present Days</a></th>
-                            <th><a href="report?y=23&m=12&ob=percent&page=1">Percentage &percnt;</a></th>
+                            <th><a href="attendance-report?y=23&m=12&ob=studId&page=1">Student Id</a></th>
+                            <th><a href="attendance-report?y=23&m=12&ob=fname&page=1">First Name</a></th>
+                            <th><a href="attendance-report?y=23&m=12&ob=lname&page=1">Last Name</a></th>
+                            <th><a href="attendance-report?y=23&m=12&ob=noofPresentDays&page=1">No of Present Days</a></th>
+                            <th><a href="attendance-report?y=23&m=12&ob=percent&page=1">Percentage &percnt;</a></th>
                         </tr>
                     </thead>
                     <tbody>
